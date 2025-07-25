@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patent Collaboration Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-800 text-gray-900 dark:bg-gray-900 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold">PatentCollaborator</h1>
+            <nav class="flex space-x-6">
+                <a href="#" class="hover:underline">Home</a>
+                <a href="#" class="hover:underline">Patents</a>
+                <a href="#" class="hover:underline">Collaborate</a>
+                <a href="#" class="hover:underline">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto my-8 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+
+        <!-- Patent Management Area -->
+        <section class="flex-grow bg-black text-white p-6 rounded-lg shadow-xl">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-semibold">Manage Your Patent Application</h2>
+                <button class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Add New Patent</button>
+            </div>
+            <textarea id="editor" class="w-full h-96 p-4 border border-gray-800 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:border-gray-700 dark:gray-600 dark:focus:ring-green-500 dark:focus:border-green-500 bg-black text-white" placeholder="Start planning your startup project here..."></textarea>
+        </section>
+
+        <!-- Collaboration and Tools -->
+        <aside class="w-full md:w-96 bg-black p-6 rounded-lg shadow-xl dark:bg-gray-800 text-white space-y-6">
+            <h2 class="text-2xl font-semibold mb-4">Patent Collaboration Tools</h2>
+
+           
+            <!-- Patent Drafting Assistant -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Patent Drafting Assistant</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">Get AI-assisted guidance for drafting your patent claims and descriptions.</p>
+                    <button class="mt-4 bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Use Assistant</button>
+                </div>
+            </div>
+
+            <!-- Legal Compliance & Review -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Legal Compliance & Review</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">Ensure your patent application meets all legal requirements.</p>
+                    <button class="mt-4 bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Review Compliance</button>
+                </div>
+            </div>
+
+            <!-- Collaborative Editing -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Collaborative Editing</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">Edit and review patent drafts with your team in real-time.</p>
+                    <button class="mt-4 bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Start Editing</button>
+                </div>
+            </div>
+
+            <!-- Patent Filing Tracker -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Patent Filing Tracker</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">Track the status of your patent filing process in real-time.</p>
+                    <button class="mt-4 bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Track Filing</button>
+                </div>
+            </div>
+
+            <!-- Comments & Feedback -->
+            <div>
+                <h3 class="text-lg font-semibold">Comments & Feedback</h3>
+                <div class="flex items-center mt-2">
+                    <textarea class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500 bg-gray-600 text-white" placeholder="Add a comment..."></textarea>
+                    <button class="ml-2 bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-700">Send</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-green-500 to-blue-500 text-white text-center py-4 mt-8">
+        <p>&copy; 2024 PatentCollaborator. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

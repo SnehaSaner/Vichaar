@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaboration Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>                                                    
+<body class="bg-gray-900 dark:bg-gray-900">
+
+    <!-- Navbar -->
+    <nav  class="bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg">
+        <div class="max-w-7xl h-20 mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white dark:text-white">Collaborate</a>
+            <div class="space-x-4">
+                <a href="#research" class="text-white dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" style="font-size: 20px;">Research</a>
+                <a href="#startups" class="text-white dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" style="font-size: 20px;">Startups</a>
+                <a href="#patents" class="text-white dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" style="font-size: 20px;">Patents</a>
+                <a href="#contact" class="text-white dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400" style="font-size: 20px;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Collaboration Section -->
+    <div class="container mx-auto px-6 py-12">
+        <!-- Research Collaboration -->
+        <section id="research" class="mb-12">
+            <h2 class="text-3xl mr-10 font-semibold text-white dark:text-white mb-6" style="font-style: italic;">Research Collaboration</h2>
+            <div class="bg-black dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white dark:text-white">Real-time Document Collaboration</h3>
+                        <a href="/Vichaaar.main/dist/researchpaper.html">
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" style="font-size: 15px;">Start Collaboration</button>
+                    </a>
+                    </div>
+                    <p class="text-gray-100 dark:text-gray-100" style="font-style:oblique">Collaborate on research papers in real-time. See changes as they happen and ensure originality with built-in plagiarism checks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Startups Collaboration -->
+        <section id="startups" class="mb-12">
+            <h2 class="text-3xl mr-5 font-semibold text-white dark:text-white mb-6" style="font-style: italic;">Startup Collaboration</h2>
+            <div class="bg-black dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white dark:text-white">Idea Sharing & Team Building</h3>
+                        <a href="/Vichaaar.main/dist/startup.html">
+                            <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-10 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" style="font-size: 15px;">Create Startup</button>
+                    </a>
+                    </div>
+                    <p class="text-gray-100 dark:text-gray-100" style="font-style:oblique">Share your startup ideas, find co-founders, and collaborate on business plans in a dedicated workspace.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patents Collaboration -->
+        <section id="patents" class="mb-12">
+            <h2 class="text-3xl font-semibold text-white dark:text-white mb-6" style="font-style: italic;">Patent Collaboration</h2>
+            <div class="bg-black dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-white dark:text-white">Patent Documentation</h3>  
+                        <a href="/Vichaaar.main/dist/patent.html">
+                            <button type="button" class="text-white bg-orange-700 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800" style="font-size: 15px;">Collaborate Patents</button>
+                    </a>
+                    </div>
+                    <p class="text-gray-100 dark:text-gray-100" style="font-style:oblique">Work together on drafting and filing patents. Use our tools to streamline the patent creation process.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="text-3xl font-semibold text-white dark:text-white mb-6" style="font-style: italic;">Contact Us</h2>
+            <div class="bg-black dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <form action="#" method="POST" class="space-y-4">
+                    <div class="flex space-x-4">
+                        <input type="text" name="name" placeholder="Your Name" class="w-1/2 p-2 bg-gray-600 dark:bg-gray-700 text-white dark:text-white rounded-lg">
+                        <input type="email" name="email" placeholder="Your Email" class="w-1/2 p-2 bg-gray-600 dark:bg-gray-700 text-white dark:text-white rounded-lg">
+                    </div>
+                    <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-2 bg-gray-600 dark:bg-gray-700 text-white dark:text-white rounded-lg"></textarea>
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer  class="bg-gradient-to-r from-green-500 to-blue-600 text-white text-center py-4 mt-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <p class="text-gray-600 dark:text-gray-400">&copy; 2024 CollaborateX. All rights reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Privacy Policy</a>
+                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+<script>
+  // Basic simulated responses
+  document.addEventListener('DOMContentLoaded', () => {
+    // Research Button
+    const researchBtn = document.querySelector('#research button');
+    researchBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("Starting research collaboration... Redirecting to research editor.");
+      window.location.href = "/Vichaaar.main/dist/researchpaper.html";
+    });
+
+    // Startup Button
+    const startupBtn = document.querySelector('#startups button');
+    startupBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("Launching your startup workspace...");
+      window.location.href = "/Vichaaar.main/dist/startup.html";
+    });
+
+    // Patent Button
+    const patentBtn = document.querySelector('#patents button');
+    patentBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("Opening patent collaboration tools...");
+      window.location.href = "/Vichaaar.main/dist/patent.html";
+    });
+
+    // Contact Form
+    const contactForm = document.querySelector('#contact form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert("Message sent! We'll get back to you soon.");
+      contactForm.reset();
+    });
+  });
+</script>

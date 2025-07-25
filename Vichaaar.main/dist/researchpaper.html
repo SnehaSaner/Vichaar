@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Collaboration Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800  text-gray-900 dark:bg-gray-900 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Research Collaborator</h1>
+            <nav class="flex space-x-4">
+                <a href="#" class="hover:underline">Home</a>
+                <a href="#" class="hover:underline">Documents</a>
+                <a href="#" class="hover:underline">Collaborate</a>
+                <a href="#" class="hover:underline">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto my-8 flex">
+        
+        <!-- Document Editing Area -->
+        <section class="flex-grow bg-black p-6 rounded-lg shadow-lg mr-8">
+            <h2 class="text-xl font-semibold mb-4 text-white">Edit Your Research Paper</h2>
+            <textarea id="editor" class="w-full h-96 p-4 border border-gray-800 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:border-gray-700 dark:gray-600 dark:focus:ring-green-500 dark:focus:border-green-500 bg-black text-white" placeholder="Start planning your startup project here..."></textarea>
+        </section>
+        
+        <!-- Collaboration Tools and Sidebar -->
+        <aside class="w-96 bg-black p-6 rounded-lg shadow-lg dark:bg-gray-800 text-white">
+            <h2 class="text-xl font-semibold mb-4">Collaboration Tools</h2>
+            
+            <!-- Collaborators List -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Collaborators</h3>
+                <ul class="mt-2 space-y-2">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                        <span>John Doe</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span>
+                        <span>Jane Smith</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Real-Time Plagiarism Check -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Real-Time Plagiarism Check</h3>
+                <div class="bg-gray-600 p-4 rounded-lg dark:bg-gray-700">
+                    <p class="text-sm">No plagiarism detected.</p>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Comments</h3>
+                <div class="flex items-center mt-2">
+                    <textarea class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500 bg-gray-600 text-white" placeholder="Add a comment..."></textarea>
+                    <button class="ml-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-l focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-700">Send</button>
+                </div>
+            </div>
+
+            <!-- Task Management -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Task Management</h3>
+                <ul class="mt-2 space-y-2">
+                    <li class="flex items-center justify-between">
+                        <span>Write Introduction</span>
+                        <button class="bg-green-500 text-white px-2 py-1 rounded-lg text-xs hover:bg-green-600">Complete</button>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <span>Review Related Work</span>
+                        <button class="bg-green-500 text-white px-2 py-1 rounded-lg text-xs hover:bg-green-600">Complete</button>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <span>Analyze Data</span>
+                        <button class="bg-green-500 text-white px-2 py-1 rounded-lg text-xs hover:bg-green-600">Complete</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Video Conferencing -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Video Conferencing</h3>
+                <div class="bg-gray-600 p-4 rounded-lg dark:bg-gray-700">
+                    <p class="text-sm">Start a video call with collaborators.</p>
+                    <button class="mt-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-l focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-700">Start Call</button>
+                </div>
+            </div>
+
+            <!-- File Sharing -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">File Sharing</h3>
+                <div class="bg-gray-600 p-4 rounded-lg dark:bg-gray-700">
+                    <p class="text-sm">Share files related to the research project.</p>
+                    <button class="mt-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-l focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-700">Upload File</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-green-500 to-blue-600 text-white text-center py-4 mt-8">
+        <p>&copy; 2024 Research Collaborator. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+<script>
+  // Handle generic button clicks
+  document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      alert(`${btn.innerText} feature is coming soon!`);
+    });
+  });
+
+  // Handle comment sending (simulated)
+  document.querySelectorAll("textarea + button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const textarea = btn.previousElementSibling;
+      if (textarea.value.trim() !== "") {
+        alert("Comment submitted: " + textarea.value);
+        textarea.value = "";
+      } else {
+        alert("Please enter a comment before sending.");
+      }
+    });
+  });
+
+  // Optional: Toggle status for task buttons
+  document.querySelectorAll("button").forEach(btn => {
+    if (btn.innerText === "Complete") {
+      btn.addEventListener("click", () => {
+        btn.innerText = "Completed";
+        btn.classList.remove("bg-green-500", "hover:bg-green-600");
+        btn.classList.add("bg-gray-500");
+      });
+    }
+  });
+</script>

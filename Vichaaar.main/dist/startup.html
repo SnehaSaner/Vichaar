@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Collaboration Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-800 text-gray-900 dark:bg-gray-900 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold">StartupHub</h1>
+            <nav class="flex space-x-6">
+                <a href="#" class="hover:underline">Home</a>
+                <a href="#" class="hover:underline">Projects</a>
+                <a href="#" class="hover:underline">Collaborate</a>
+                <a href="#" class="hover:underline">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto my-8 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+
+        <!-- Project Management Area -->
+        <section class="flex-grow bg-black p-6 rounded-lg shadow-xl">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-semibold text-white ">Manage Your Startup Project</h2>
+                <button class="bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Add New Task</button>
+            </div>
+            <textarea id="editor" class="w-full h-96 p-4 border border-gray-800 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:border-gray-700 dark:gray-600 dark:focus:ring-green-500 dark:focus:border-green-500 bg-black text-white" placeholder="Start planning your startup project here..."></textarea>
+        </section>
+
+        <!-- Collaboration and Tools -->
+        <aside class="w-full md:w-96 bg-black p-6 rounded-lg shadow-xl dark:bg-gray-800 text-white space-y-6">
+            <h2 class="text-2xl font-semibold mb-4">Collaboration Tools</h2>
+
+            <!-- Team Members -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Team Members</h3>
+                <ul class="mt-2 space-y-2">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                        <span>Alice Johnson</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span>
+                        <span>Bob Lee</span>
+                    </li>
+                </ul>
+                <button class="mt-4 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Invite Member</button>
+            </div>
+
+            <!-- Task Management -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Task Management</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">No pending tasks.</p>
+                </div>
+            </div>
+
+            <!-- Milestone Tracking -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Milestone Tracking</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">Next milestone: Prototype development</p>
+                    <div class="mt-2">
+                        <div class="h-2 bg-green-200 rounded-full overflow-hidden">
+                            <div class="w-3/4 h-full bg-green-500"></div>
+                        </div>
+                        <p class="text-xs text-right mt-1">75% Complete</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Funding & Investment -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Funding & Investment</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">Funding round scheduled for next month.</p>
+                    <div class="flex items-center justify-between mt-2">
+                        <p class="text-xs">Total Raised: $1.2M</p>
+                        <button class="bg-gradient-to-r from-green-400 to-blue-500 text-white px-3 py-1 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Documents -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Legal Documents</h3>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-600 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">All legal documents are up to date.</p>
+                    <button class="mt-4 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">Review Documents</button>
+                </div>
+            </div>
+
+            <!-- Comments & Feedback -->
+            <div>
+                <h3 class="text-lg font-semibold">Comments & Feedback</h3>
+                <div class="flex items-center mt-2">
+                    <textarea class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 bg-gray-600 text-white" placeholder="Add a comment..."></textarea>
+                    <button class="ml-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:ring-2 focus:ring-green-300 dark:focus:ring-green-700">Send</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-green-400 to-blue-500 text-white text-center py-4 mt-8">
+        <p>&copy; 2024 StartupHub. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+  // Handle generic button clicks
+  document.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      alert(`${btn.innerText} feature is coming soon!`);
+    });
+  });
+
+  // Handle comment sending (simulated)
+  document.querySelectorAll("textarea + button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const textarea = btn.previousElementSibling;
+      if (textarea.value.trim() !== "") {
+        alert("Comment submitted: " + textarea.value);
+        textarea.value = "";
+      } else {
+        alert("Please enter a comment before sending.");
+      }
+    });
+  });
+
+  // Optional: Toggle status for task buttons
+  document.querySelectorAll("button").forEach(btn => {
+    if (btn.innerText === "Complete") {
+      btn.addEventListener("click", () => {
+        btn.innerText = "Completed";
+        btn.classList.remove("bg-green-500", "hover:bg-green-600");
+        btn.classList.add("bg-gray-500");
+      });
+    }
+  });
+</script>

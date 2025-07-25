@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message - Contact 1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styling for message interface */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .message-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #333;
+            border-bottom: 1px solid #444;
+        }
+
+        .message-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .message-header div {
+            margin-left: 10px;
+        }
+
+        .message-header .name {
+            font-weight: bold;
+        }
+
+        .message-content {
+            padding: 15px;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .message.sent {
+            background-color: #444;
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .message.received {
+            background-color: #555;
+        }
+
+        .message-footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            border-top: 1px solid #444;
+        }
+
+        .message-footer input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            margin-right: 10px;
+            color: #000;
+        }
+
+        .message-footer button {
+            background-color: #1a73e8;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* File and audio icons */
+        .icon {
+            background-color: #444;
+            border-radius: 50%;
+            margin-right: 8px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="message-container">
+    <!-- Header Section -->
+    <div class="message-header">
+        <img src="research6.jpg" alt="Contact 2">
+        <div>
+            <p class="name">Contact 2</p>
+            <p class="status">Active now</p>
+        </div>
+    </div>
+
+    <!-- Messages Section -->
+    <div class="message-content" id="messageContent">
+        <div class="message received">Hello! How are you?</div>
+        <div class="message sent">I'm good, thanks! How about you?</div>
+    </div>
+
+    <!-- Message Input Section -->
+    <div class="message-footer">
+        <div class="icon">
+            <label for="fileUpload">
+                <img src="file-icon.png" alt="Attach File" width="20px">
+            </label>
+            <input type="file" id="fileUpload" style="display: none;">
+        </div>
+        <div class="icon">
+            <label for="audioUpload">
+                <img src="audio-icon.png" alt="Attach Audio" width="20px">
+            </label>
+            <input type="file" id="audioUpload" accept="audio/*" style="display: none;">
+        </div>
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">➤</button>
+    </div>
+</div>
+
+<script>
+    // Function to send a message
+    function sendMessage() {
+        const messageInput = document.getElementById('messageInput');
+        const messageContent = document.getElementById('messageContent');
+        const messageText = messageInput.value.trim();
+
+        if (messageText) {
+            // Create a new message element
+            const message = document.createElement('div');
+            message.classList.add('message', 'sent');
+            message.textContent = messageText;
+
+            // Append the new message to the message content area
+            messageContent.appendChild(message);
+            messageContent.scrollTop = messageContent.scrollHeight;
+
+            // Clear the input
+            messageInput.value = '';
+        }
+    }
+</script>
+
+</body>
+</html>

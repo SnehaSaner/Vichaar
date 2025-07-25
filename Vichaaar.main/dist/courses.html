@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Page</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800 min-h-screen">
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-green-500 to-blue-600 flex items-center justify-center" style="background-color: #08218f; height: 140px;">
+        <div class="text-white text-center">
+            <h1 class="text-5xl font-bold">Master Your Skills</h1>
+            <p class="mt-2 text-xl">Join expert-led webinars and watch high-quality video courses.</p>
+        </div>
+    </div>
+    
+</body>
+
+    <!-- Courses Section -->
+<div class="container mx-auto my-0 p-6 bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-100" style="font-size:35px">Available Webinars</h2>
+    
+    <!-- Grid for the Course Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- Set grid-cols-2 for two columns side by side -->
+        
+       <!-- Course Card -->
+<div class="bg-black p-4 rounded-lg shadow-md">
+    <img src="data_science.jpg" alt="Webinar" class="w-full h-80 object-cover rounded-lg">
+    <h3 class="mt-4 text-xl font-bold">Webinar: Advanced JavaScript</h3>
+    <p class="mt-2 text-gray-100" style="font-size: 25px; font-style: italic">"Unlock the power of data with hands-on skills and insights to drive smarter decisions."</p>
+    <button style="background-color: #08218f;" class="mt-4 text-white px-4 py-2 rounded-lg">Join Webinar</button>
+</div>
+
+
+         <!-- Course Card -->
+<div class="bg-black p-4 rounded-lg shadow-md">
+    <img src="startup.jpg" alt="Webinar" class="w-full h-80 object-cover rounded-lg">
+    <h3 class="mt-4 text-xl font-bold">Webinar: Advanced JavaScript</h3>
+    <p class="mt-2 text-gray-100" style="font-size: 25px; font-style: italic" >"Kickstart your startup journey with game-changing insights and tools."</p>
+    <button style="background-color: #08218f;" class="mt-4 text-white px-4 py-2 rounded-lg">Join Webinar</button>
+</div>
+         <!-- Course Card -->
+<div class="bg-black p-4 rounded-lg shadow-md">
+    <img src="research.jpg" alt="Webinar" class="w-full h-80 object-cover rounded-lg">
+    <h3 class="mt-4 text-xl font-bold">Webinar: Advanced JavaScript</h3>
+    <p class="mt-2 text-gray-100" style="font-size: 25px; font-style: italic" >"Kickstart your research journey with game-changing insights and tools."</p>
+    <button style="background-color: #08218f;" class="mt-4 text-white px-4 py-2 rounded-lg">Join Webinar</button>
+</div>
+
+         <!-- Course Card -->
+<div class="bg-black p-4 rounded-lg shadow-md">
+    <img src="PATENT.jpg" alt="Webinar" class="w-full h-80 object-cover rounded-lg">
+    <h3 class="mt-4 text-xl font-bold">Webinar: Advanced JavaScript</h3>
+    <p class="mt-2 text-gray-100" style="font-size: 25px; font-style: italic" >"Kickstart your patent journey with game-changing insights and tools."</p>
+    <button style="background-color: #08218f;" class="mt-4 text-white px-4 py-2 rounded-lg">Join Webinar</button>
+</div>
+
+         <!-- Course Card -->
+<div class="bg-black p-4 rounded-lg shadow-md">
+    <img src="ai.jpg" alt="Webinar" class="w-full h-80 object-cover rounded-lg">
+    <h3 class="mt-4 text-xl font-bold">Webinar: Advanced JavaScript</h3>
+    <p class="mt-2 text-gray-100" style="font-size: 25px; font-style: italic" >"Kickstart your AI journey with game-changing insights and tools."</p>
+    <button style="background-color: #08218f;" class="mt-4 text-white px-4 py-2 rounded-lg">Join Webinar</button>
+</div>
+        
+    </div>
+</div>
+
+
+    <!-- Video Player Section -->
+<!-- Video Player Section -->
+<div class="bg-gray-800 py-8">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-100" style="font-size:35px">Featured Courses</h2>
+        <div class="flex justify-center space-x-8">
+            <!-- First Video -->
+            <div class="flex-1 max-w-md">
+                <video controls class="w-full rounded-lg shadow-md">
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Second Video -->
+            <div class="flex-1 max-w-md">
+                <video controls class="w-full rounded-lg shadow-md">
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="flex-1 max-w-md">
+                <video controls class="w-full rounded-lg shadow-md">
+                    <source src="video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Upcoming Webinars Section -->
+    <div class="bg-gray-800 py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-100">Upcoming Webinars</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Webinar Card -->
+                <div class="bg-black p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-100">Introduction to Python</h3>
+                    <p class="mt-2 text-gray-400">Date: 15th September, 2024</p>
+                    <button class="mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg">Register Now</button>
+                </div>
+                <div class="bg-black p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-100">Introduction to Python</h3>
+                    <p class="mt-2 text-gray-300">Date: 15th September, 2024</p>
+                    <button class="mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg">Register Now</button>
+                </div>
+                <div class="bg-black p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-100">Introduction to Python</h3>
+                    <p class="mt-2 text-gray-300">Date: 15th September, 2024</p>
+                    <button class="mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg">Register Now</button>
+                </div>
+                <div class="bg-black p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-100">Introduction to Python</h3>
+                    <p class="mt-2 text-gray-300">Date: 15th September, 2024</p>
+                    <button class="mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg">Register Now</button>
+                </div>
+                <div class="bg-black p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-100">Introduction to Python</h3>
+                    <p class="mt-2 text-gray-300">Date: 15th September, 2024</p>
+                    <button class="mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg">Register Now</button>
+                </div>
+                <div class="bg-black p-4 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-100">Introduction to Python</h3>
+                    <p class="mt-2 text-gray-300">Date: 15th September, 2024</p>
+                    <button class="mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg">Register Now</button>
+                </div>
+                <!-- Repeat Webinar Card for other upcoming webinars -->
+                <!-- ... -->
+            </div>
+        </div>
+    </div>
+
+
+    <body style="font-family: Arial, sans-serif; height: 1500px; margin: 0; padding: 0; background-color: #f5f5f5;">
+
+        <!-- Upload Button -->
+        <button class="bg-gradient-to-r from-green-500 to-blue-600"style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border: none; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); cursor: pointer; transition: background-color 0.3s ease;">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" style="width: 24px; height: 24px; fill: none; stroke: #fff;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+            </svg>
+        </button>
+        
+    </body>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-green-500 to-blue-600 text-white py-4 m-0">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Vichaar™. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

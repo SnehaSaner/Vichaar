@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patent Submission Success</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Black background */
+            font-family: 'Arial', sans-serif;
+        }
+
+        .success-container {
+            text-align: center;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #56ab2f, #00b4db); /* Green to blue gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+        }
+
+        .tick {
+            font-size: 80px;
+            color: #fff; /* White tick */
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.9s ease-in, transform 0.9s ease-in;
+        }
+
+        .circle.show .tick {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        h1 {
+            color: #fff; /* White text */
+            font-size: 28px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="circle">
+            <div class="tick">&#10003;</div> <!-- Tick mark symbol -->
+        </div>
+        <h1>Patent Submitted</h1>
+    </div>
+
+    <script>
+        // Wait 0.9 seconds before showing the tick
+        setTimeout(() => {
+            document.querySelector('.circle').classList.add('show');
+        }, 900);
+    </script>
+</body>
+</html>

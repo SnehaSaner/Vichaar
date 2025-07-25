@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+        /* Base background and text colors for light/dark modes */
+        body {
+            background-color: #1f2937; /* bg-gray-900 */
+            color: #e5e7eb; /* text-gray-100 */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        nav {
+            background: linear-gradient(to right, #38a169, #3182ce); /* from-green-400 to-blue-500 */
+            color: white;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #2d3748; /* bg-gray-800 */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #38b2ac; /* teal-400 */
+            margin-right: 20px;
+        }
+
+        .profile-header .profile-info h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e5e7eb; /* text-gray-100 */
+        }
+
+        .profile-header .profile-info p {
+            font-size: 16px;
+            color: #a0aec0; /* text-gray-400 */
+        }
+
+        /* About section */
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #63b3ed; /* text-blue-400 */
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            color: #cbd5e0; /* text-gray-300 */
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list .skill {
+            background-color: #4a5568; /* bg-gray-700 */
+            color: #e5e7eb; /* text-gray-100 */
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Experience, Education, Certifications, Projects */
+        .experience-item, .education-item, .project-item, .certification-item {
+            margin-top: 10px;
+            background-color: #4a5568; /* bg-gray-700 */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .experience-item h4, .education-item h4, .project-item h4, .certification-item h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e5e7eb;
+        }
+
+        .experience-item p, .education-item p, .project-item p, .certification-item p {
+            color: #a0aec0; /* text-gray-400 */
+            font-size: 14px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #63b3ed; /* blue-400 */
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #3182ce; /* blue-500 */
+        }
+        .share-btn {
+            background-color: #63b3ed; /* blue-400 */
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .share-btn:hover {
+            background-color: #3182ce; /* blue-500 */
+        }
+
+        .share-btn i {
+            margin-right: 5px;
+        }
+
+        /* Profile container and header styling */
+        .profile-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2d3748; /* dark background */
+            color: #e2e8f0; /* light text */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+
+        .profile-info h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            font-size: 14px;
+            color: #a0aec0; /* light gray */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 dark:bg-gray-900">
+    <nav class="bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg">
+        <h1>Profile</h1>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="settings.html">Settings</a>
+            <a href="logout.html">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Profile Container -->
+    <div class="profile-container" id="profileContent">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <!-- Profile Image -->
+            <img src="research1.jpg" alt="Theo James">
+            <div class="profile-info">
+                <!-- Profile Name and Title -->
+                <h2>Theo James</h2>
+                <p>Software Engineer | Tech Enthusiast</p>
+            </div>
+            <!-- Share Button -->
+            <div class="share-btn" onclick="generatePDF()">
+                <i class="fas fa-share-alt"></i> Share Profile
+            </div>
+        </div>
+
+
+        <!-- About Section -->
+        <div class="section-title">About Me</div>
+        <div class="profile-content">
+            I'm a passionate software engineer with a love for developing innovative solutions. Skilled in front-end and back-end technologies, I enjoy working on open-source projects and learning about the latest advancements in technology.
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section-title">Skills</div>
+        <div class="skills-list">
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Python</span>
+            <span class="skill">Django</span>
+            <span class="skill">SQL</span>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section-title">Experience</div>
+        <div class="experience-item">
+            <h4>Software Engineer at TechCorp</h4>
+            <p>Jan 2022 - Present</p>
+            <p>Working on developing scalable web applications and optimizing user experience across multiple platforms.</p>
+        </div>
+        <div class="experience-item">
+            <h4>Junior Developer at DevSolutions</h4>
+            <p>Aug 2020 - Dec 2021</p>
+            <p>Assisted in building front-end features and contributed to several open-source projects.</p>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section-title">Education</div>
+        <div class="education-item">
+            <h4>Bachelor of Science in Computer Science</h4>
+            <p>XYZ University, 2020</p>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="section-title">Certifications</div>
+        <div class="certification-item">
+            <h4>Full-Stack Web Development</h4>
+            <p>Online Bootcamp, 2021</p>
+        </div>
+        <div class="certification-item">
+            <h4>Python for Data Science</h4>
+            <p>Online Course, 2020</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section-title">Projects</div>
+        <div class="project-item">
+            <h4>Portfolio Website</h4>
+            <p>Built a personal portfolio website showcasing my projects, skills, and experience.</p>
+        </div>
+        <div class="project-item">
+            <h4>E-commerce Platform</h4>
+            <p>Collaborated with a team to develop an online store with real-time payment processing and user authentication.</p>
+        </div>
+
+        <!-- Hobbies Section -->
+        <div class="section-title">Hobbies</div>
+        <div class="section-content">
+            In my free time, I enjoy hiking, reading sci-fi novels, and experimenting with new programming languages.
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+    <script>
+        function generatePDF() {
+            const profileContent = document.getElementById('profileContent');
+            if (!profileContent) {
+                console.error("Profile content div not found");
+                return;
+            }
+
+            // Generate the PDF from the profile content
+            html2pdf(profileContent, {
+                margin:       1,
+                filename:     'Profile_TheoJames.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            });
+        }
+    </script>
+</body>
+</html>

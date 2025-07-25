@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funds Tracking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-800 text-white dark:bg-gray-900 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold">Funds Tracker</h1>
+            <nav class="flex space-x-6">
+                <a href="#" class="hover:underline">Dashboard</a>
+                <a href="#" class="hover:underline">Funds</a>
+                <a href="#" class="hover:underline">Reports</a>
+                <a href="#" class="hover:underline">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto my-8 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8">
+        
+        <!-- Funds Usage Overview -->
+        <section class="flex-grow bg-gray-800 p-6 rounded-lg shadow-xl">
+            <h2 class="text-2xl font-semibold mb-4">Funds Usage Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Fund Usage Card -->
+                <div class="bg-gradient-to-r bg-black text-white p-4 rounded-lg shadow-inner dark:bg-gray-700">
+                    <h3 class="text-lg font-semibold">Project A</h3>
+                    <p class="text-sm">Allocated: $50,000</p>
+                    <div class="mt-2">
+                        <div class="h-2 bg-orange-200 rounded-full overflow-hidden">
+                            <div class="w-3/4 h-full bg-green-500"></div>
+                        </div>
+                        <p class="text-xs text-right mt-1">75% Spent</p>
+                    </div>
+                    <button class="mt-4 bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">View Details</button>
+                </div>
+
+                <!-- Another Fund Usage Card -->
+                <div class="bg-gradient bg-black text-white p-4 rounded-lg shadow-inner dark:bg-gray-700">
+                    <h3 class="text-lg font-semibold">Project B</h3>
+                    <p class="text-sm">Allocated: $75,000</p>
+                    <div class="mt-2">
+                        <div class="h-2 bg-orange-200 rounded-full overflow-hidden">
+                            <div class="w-1/2 h-full bg-green-500"></div>
+                        </div>
+                        <p class="text-xs text-right mt-1">50% Spent</p>
+                    </div>
+                    <button class="mt-4 bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-gradient-to-l focus:outline-none">View Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funders Feedback Section -->
+        <aside class="w-full md:w-96 bg-black p-6 rounded-lg shadow-xl dark:bg-gray-100 space-y-6">
+            <h2 class="text-2xl font-semibold mb-4">Funders Feedback</h2>
+
+            <!-- Funders List -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Funders</h3>
+                <ul class="mt-2 space-y-2">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                        <span>Funder 1</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 rounded-full bg-red-500 mr-2"></span>
+                        <span>Funder 2</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Funder Comments -->
+<div class="mb-6">
+    <h3 class="text-lg font-semibold">Comments</h3>
+    <div class="flex items-center mt-2">
+        <textarea class="w-full p-2 border border-gray-800 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-gray-300 text-black dark:bg-gray-800 dark:text-black dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="Add a comment..."></textarea>
+        <button class="ml-2 bg-green-500 text-black px-4 py-2 rounded-lg hover:bg-orange-600 focus:ring-2 focus:ring-orange-300 dark:focus:ring-orange-700">Send</button>
+    </div>
+</div>
+
+
+            <!-- File Upload for Receipts -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold">Upload Receipts</h3>
+                <div class="bg-gradient-to-r bg-gray-700 p-4 rounded-lg dark:bg-gray-700 shadow-inner">
+                    <p class="text-sm">Upload your receipts to verify the usage of funds.</p>
+                    <button class="mt-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:bg-gradient-to-l focus:outline-none">Upload File</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-green-500 to-blue-600 text-white text-center py-4 mt-8">
+        <p>&copy; 2024 Funds Tracker. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

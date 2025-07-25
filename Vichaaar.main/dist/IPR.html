@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Interface with Profile Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    body {
+        background-color: #000000; /* Black background for the entire page */
+        color: #ffffff; /* White text color */
+        font-size: 16px;
+    }
+    .form-container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .form-wrapper {
+        width: 100%;
+        max-width: 1200px; /* Maximum width of the form */
+        background-color: #1f2937; /* Dark gray background for the form */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        padding: 2rem;
+    }
+    .form-header {
+        margin-bottom: 1.5rem;
+    }
+    .form-header h1 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+</style>
+<body class="bg-gray-900">
+
+    <!-- Tabs -->
+    <div class="w-full max-w-4xl mx-auto mt-10">
+        <div class="mb-4 border-b border-gray-200 dark:border-gray-700" style="font-size:20px">
+            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="tabs" role="tablist">
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg text-blue-800 border-blue-700" style="font-size:20px" id="profile-tab"
+                        data-tab-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Apply</button>
+                </li>
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg text-gray-100 hover:text-blue-800 hover:border-blue-800" style="font-size:20px"
+                        id="dashboard-tab" data-tab-target="#dashboard" type="button" role="tab" aria-controls="dashboard"
+                        aria-selected="false">Check Status</button>
+                </li>
+                <li class="mr-2" role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg text-gray-100 hover:text-blue-800 hover:border-blue-800" style="font-size:20px"
+                        id="settings-tab" data-tab-target="#settings" type="button" role="tab" aria-controls="settings"
+                        aria-selected="false">Guide</button>
+                </li>
+                <li role="presentation">
+                    <button class="inline-block p-4 border-b-2 rounded-t-lg text-gray-100 hover:text-blue-800 hover:border-blue-800" style="font-size:20px"
+                        id="contacts-tab" data-tab-target="#contacts" type="button" role="tab" aria-controls="contacts"
+                        aria-selected="false">Contacts</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="form-container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h1 class="text-white" style="font-style:italic;">Patent Application Form</h1>
+                    <p class="text-gray-400">Please fill out the following details to apply for a patent.</p>
+                </div>
+                <form id="patentForm">
+                    <div class="grid gap-6 mb-6 md:grid-cols-2" style="font-size:20px">
+                        <!-- Personal Information -->
+                        <div>
+                            <label for="first_name" class="block mb-2 text-sm font-medium text-white">First name</label>
+                            <input type="text" id="first_name" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="John" required />
+                        </div>
+                        <div>
+                            <label for="last_name" class="block mb-2 text-sm font-medium text-white">Last name</label>
+                            <input type="text" id="last_name" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Doe" required />
+                        </div>
+                        <div>
+                            <label for="company" class="block mb-2 text-sm font-medium text-white">Company</label>
+                            <input type="text" id="company" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Company Name" required />
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 text-sm font-medium text-white">Phone number</label>
+                            <input type="tel" id="phone" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-white">Email address</label>
+                            <input type="email" id="email" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="john.doe@company.com" required />
+                        </div>
+                        <div>
+                            <label for="website" class="block mb-2 text-sm font-medium text-white">Website URL</label>
+                            <input type="url" id="website" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="website.com" required />
+                        </div>
+                        <!-- Address Information -->
+                        <div>
+                            <label for="address" class="block mb-2 text-sm font-medium text-white">Address</label>
+                            <input type="text" id="address" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="123 Main St, City, Country" required />
+                        </div>
+                        <div>
+                            <label for="job_title" class="block mb-2 text-sm font-medium text-white">Job Title</label>
+                            <input type="text" id="job_title" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Your Job Title" required />
+                        </div>
+                        <div>
+                            <label for="patent_title" class="block mb-2 text-sm font-medium text-white">Patent Title</label>
+                            <input type="text" id="patent_title" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Title of your patent" required />
+                        </div>
+                        <div>
+                            <label for="patent_description" class="block mb-2 text-sm font-medium text-white">Patent Description</label>
+                            <textarea id="patent_description" rows="4" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Describe your patent in detail" required></textarea>
+                        </div>
+                        <div>
+                            <label for="invention_type" class="block mb-2 text-sm font-medium text-white">Type of Invention</label>
+                            <input type="text" id="invention_type" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="e.g., Mechanical, Electrical, Chemical" required />
+                        </div>
+                        <div>
+                            <label for="date_of_invention" class="block mb-2 text-sm font-medium text-white">Date of Invention</label>
+                            <input type="date" id="date_of_invention" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                        </div>
+                        <div>
+                            <label for="prior_art" class="block mb-2 text-sm font-medium text-white">Prior Art References</label>
+                            <textarea id="prior_art" rows="4" class="bg-gray-800 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="List any prior art references" required></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="file_input" class="block mb-2 text-sm font-medium text-white">Upload File</label>
+                        <input type="file" id="file_input" class="block w-full text-sm text-gray-100 border border-gray-600 rounded-lg cursor-pointer bg-gray-800 dark:text-gray-400 focus:outline-none">
+                    </div>
+                    <div class="flex items-start mb-6">
+                        <div class="flex items-center h-5">
+                            <input id="terms" type="checkbox" class="w-4 h-4 border border-gray-600 rounded bg-gray-800 focus:ring-3 focus:ring-blue-500" required />
+                        </div>
+                        <label for="terms" class="ml-2 text-sm font-medium text-white">I agree with the <a href="#" class="text-blue-500 hover:underline">terms and conditions</a>.</label>
+                    </div>
+                    <button type="submit" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('[data-tab-target]').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabTarget = document.querySelector(button.dataset.tabTarget);
+                document.querySelectorAll('[role="tabpanel"]').forEach(tabContent => {
+                    tabContent.classList.add('hidden');
+                });
+                tabTarget.classList.remove('hidden');
+                document.querySelectorAll('[role="tab"]').forEach(tab => {
+                    tab.classList.remove('border-blue-700', 'text-blue-800');
+                    tab.classList.add('text-gray-100');
+                });
+                button.classList.add('border-blue-700', 'text-blue-800');
+            });
+        });
+
+        // Redirect on form submit
+        document.getElementById('patentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            window.location.href = "tick.html"; // Redirect to success page
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .item-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .item-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .item-name {
+            font-size: 1.2em;
+            margin: 0;
+            color: #eceff7;
+        }
+        
+        .item-expertise,
+        .item-details {
+            font-size: 1em;
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900">
+
+    <!-- Search Bar Section -->
+    <form class="flex items-center max-w-lg mx-auto p-5">
+        <label for="search-bar" class="sr-only">Search</label>
+        <div class="relative w-full">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3">
+                <a href="file:///C:/Users/yashu/OneDrive/Desktop/Tailwind-stater/dist/index.html">
+                    <svg class="w-8 h-8 ml-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10" style="color: #130db2;">
+                        <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                    </svg>
+                </a>
+            </div>
+            <input type="text" id="search-bar" class="bg-gray-700 border border-gray-200 text-gray-100 text-sm rounded-lg block w-full ps-25 p-4 text-center" placeholder="Type to search..." required style="color: #eceff7; border-color: #1E3A8A; font-size:20px;"/>
+        </div>
+        <button type="button" id="search-button" class="inline-flex items-center py-2 px-4 ms-2 text-sm font-medium text-white rounded-lg border" style="background-color: #1E3A8A; border-color: #1E3A8A;">
+            <svg class="w-10 h-10 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" style="color: #FFFFFF;">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+            Search
+        </button>
+    </form>
+    
+    
+    <!-- Filter Section (Initially Hidden) -->
+    <div id="filter-section" class="max-w-lg mx-auto p-50 hidden">
+        <h2 class="text-lg text-gray-100 font-semibold mb-3">Filter Results</h2>
+        <div class="flex gap-4 text-gray-100" style="font-size: 16px">
+            <label><input type="radio" name="filter" value="all" class="mr-2" checked> All</label>
+            <label><input type="radio" name="filter" value="profiles" class="mr-2"> Profiles</label>
+            <label><input type="radio" name="filter" value="startups" class="mr-2"> Startups</label>
+            <label><input type="radio" name="filter" value="papers" class="mr-2"> Research Papers</label>
+            <label><input type="radio" name="filter" value="patents" class="mr-2"> Patents</label>
+        </div>
+    </div>
+
+    <!-- Results Section (Initially Hidden) -->
+    <div id="results-section" class="max-w-lg mx-auto p-5 hidden text-gray-100">
+        <h3 class="text-lg font-semibold mb-3 text-gray-100">Search Results</h3>
+        <ul id="results-list" class="list-disc pl-5 text-gray-100"></ul>
+    </div>
+
+    <!-- JavaScript for Dynamic Functionality -->
+    <script>
+        // References to search bar, search button, filter section, and results section
+        const searchButton = document.getElementById('search-button');
+        const searchBar = document.getElementById('search-bar');
+        const filterSection = document.getElementById('filter-section');
+        const resultsSection = document.getElementById('results-section');
+        const resultsList = document.getElementById('results-list');
+        const filterRadios = document.getElementsByName('filter');
+
+        // Mock data for results based on filter
+        const data = {
+            profiles: [
+                { name: 'Taylor Locke', expertise: 'AI Specialist| Frontend Developer| ', pic: 'research13.jpg' },
+                { name: 'Judy Robinsons', expertise: 'Software Engineer| Project Manager| Google SE', pic: 'research14.jpg' }
+            ],
+            startups: [
+                { name: 'Tech Innovators Inc.', logo: 'research15.jpg' },
+                { name: 'AI Startups Ltd.', logo: 'research16.jpg' }
+            ],
+            papers: [
+                { title: 'A Study on Machine Learning', publication: 'research19.jpg' },
+                { title: 'Deep Learning in Healthcare', publication: 'IJRTE.jpg' }
+            ],
+            patents: [
+                { title: 'AI Optimization Patent', document: 'research18.jpg' },
+                { title: 'New VR Technology Patent', document: 'research20.jpg' }
+            ]
+        };
+
+        // When search button is clicked
+        searchButton.addEventListener('click', function () {
+            const searchQuery = searchBar.value.trim();
+
+            // If there's a search query, show the filter section
+            if (searchQuery) {
+                filterSection.classList.remove('hidden');
+
+                // By default, show all categories
+                showResults('all');
+            } else {
+                filterSection.classList.add('hidden');
+                resultsSection.classList.add('hidden');
+            }
+        });
+
+        // When a filter is selected, show the corresponding results
+        filterSection.addEventListener('change', function (event) {
+            const selectedFilter = event.target.value;
+            showResults(selectedFilter);
+        });
+
+        // Function to show results based on the filter or 'all'
+        function showResults(filter) {
+            // Clear the previous results
+            resultsList.innerHTML = '';
+
+            // Show the filtered or all results
+            if (filter === 'all') {
+                Object.keys(data).forEach(category => {
+                    data[category].forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'item-container';
+                        
+                        if (category === 'profiles') {
+                            listItem.innerHTML = `
+                                <img src="${item.pic}" alt="${item.name}" class="item-pic">
+                                <div>
+                                    <h2 class="item-name">${item.name}</h2>
+                                    <p class="item-expertise">${item.expertise}</p>
+                                </div>
+                            `;
+                        } else if (category === 'startups') {
+                            listItem.innerHTML = `
+                                <img src="${item.logo}" alt="${item.name}" class="item-pic">
+                                <div>
+                                    <h2 class="item-name">${item.name}</h2>
+                                </div>
+                            `;
+                        } else if (category === 'papers') {
+                            listItem.innerHTML = `
+                                <img src="${item.publication}" alt="${item.title}" class="item-pic">
+                                <div>
+                                    <h2 class="item-name">${item.title}</h2>
+                                </div>
+                            `;
+                        } else if (category === 'patents') {
+                            listItem.innerHTML = `
+                                <img src="${item.document}" alt="${item.title}" class="item-pic">
+                                <div>
+                                    <h2 class="item-name">${item.title}</h2>
+                                </div>
+                            `;
+                        }
+
+                        resultsList.appendChild(listItem);
+                    });
+                });
+            } else if (data[filter]) {
+                data[filter].forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'item-container';
+                    
+                    if (filter === 'profiles') {
+                        listItem.innerHTML = `
+                            <img src="${item.pic}" alt="${item.name}" class="item-pic">
+                            <div>
+                                <h2 class="item-name">${item.name}</h2>
+                                <p class="                                item-expertise">${item.expertise}</p>
+                            </div>
+                        `;
+                    } else if (filter === 'startups') {
+                        listItem.innerHTML = `
+                            <img src="${item.logo}" alt="${item.name}" class="item-pic">
+                            <div>
+                                <h2 class="item-name">${item.name}</h2>
+                            </div>
+                        `;
+                    } else if (filter === 'papers') {
+                        listItem.innerHTML = `
+                            <img src="${item.publication}" alt="${item.title}" class="item-pic">
+                            <div>
+                                <h2 class="item-name">${item.title}</h2>
+                            </div>
+                        `;
+                    } else if (filter === 'patents') {
+                        listItem.innerHTML = `
+                            <img src="${item.document}" alt="${item.title}" class="item-pic">
+                            <div>
+                                <h2 class="item-name">${item.title}</h2>
+                            </div>
+                        `;
+                    }
+
+                    resultsList.appendChild(listItem);
+                });
+            }
+
+            resultsSection.classList.remove('hidden');
+        }
+    </script>
+    
+</body>
+
+</html>
+
